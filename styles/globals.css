@@ -10,3 +10,25 @@ body {
         overflow: hidden; /* Prevents content from overflowing the page */
 
 }
+#app-container {
+    position: relative;
+}
+
+#app {
+    position: relative;
+    z-index: 1;
+}
+
+#spotify-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh; /* This will make the overlay fit the screen vertically */
+    z-index: 2;
+}
+#spotify-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

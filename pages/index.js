@@ -36,10 +36,14 @@ export default function Home() {
                 <a className={styles.link} href="/br">BR</a>
             </div>
             */}
-            <div id="app" ref={mount}>
-                {/* Your app content goes here */}
-            </div>
-
+<div id="app-container" ref={mount}>
+    <div id="app">
+        {/* Your app content goes here */}
+    </div>
+    <div id="spotify-overlay">
+        <img src="spotify1.png" alt="Spotify" /> {/* Ensure the path is correct */}
+    </div>
+</div>
             {/* If your app.js has React code, you can import it here.
                 Otherwise, you'll need to refactor it to work with React and Next.js */}
         </div>
