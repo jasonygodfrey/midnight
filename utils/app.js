@@ -77,6 +77,8 @@ export function initializeThreeJS(mountPoint) {
     let deviceOrientationControls;
     if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
         deviceOrientationControls = new DeviceOrientationControls(camera);
+        deviceOrientationControls.connect();
+        deviceOrientationControls.update(); // Update to align with the default camera settings
     }
 
     // Animation loop
