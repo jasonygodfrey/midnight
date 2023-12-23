@@ -28,7 +28,6 @@ body {
     z-index: 2;
 }
 #spotify-overlay img {
-    width: 100%;
+    width: auto; /* Adjust the width or height as needed */
     height: 100%;
-    object-fit: cover;
 }
