@@ -26,7 +26,7 @@ export default function Home() {
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="stylesheet" href="/style.css" />
-                <title>CharmsxNectar Spirit Cafe</title>
+                <title>Spotify 3D Demo</title>
                 <link rel="shortcut icon" href="/skrillexlogoico.ico" type="image/x-icon" />
                 <link href="https://fonts.googleapis.com/css2?family=Nimbus+Sans:wght@400;700&display=swap" rel="stylesheet" />
             </Head>

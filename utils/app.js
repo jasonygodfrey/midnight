@@ -12,7 +12,11 @@ export function initializeThreeJS(mountPoint) {
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 5;
+    
+    camera.position.z = 1;
+    camera.position.y = -2.;
+    camera.rotation.x = 0.4; // Rotate camera slightly upwards
+
 
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -23,10 +27,10 @@ export function initializeThreeJS(mountPoint) {
     // Load the GLTF model
     let mixer; // Animation mixer
     const loader = new GLTFLoader();
-    loader.load('sushiresturantkit/scene.gltf', function (gltf) {
+    loader.load('cloud_station/scene.gltf', function (gltf) {
         gltf.scene.scale.set(1, 1, 1);
         scene.add(gltf.scene);
-        scene.position.x -= 15;
+        scene.position.x -= 0;
         scene.position.y -= 3;
         if (gltf.animations && gltf.animations.length) {
             mixer = new THREE.AnimationMixer(gltf.scene);
