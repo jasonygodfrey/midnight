@@ -81,18 +81,22 @@ export function initializeThreeJS(mountPoint) {
         deviceOrientationControls.update(); // Update to align with the default camera settings
     }
 
-    // Animation loop
-    function animate() {
-        requestAnimationFrame(animate);
-        const delta = clock.getDelta();
-        if (mixer) {
-            mixer.update(delta);
-        }
-        if (deviceOrientationControls) {
-            deviceOrientationControls.update();
-        }
-        composer.render();
+// Animation loop
+function animate() {
+    requestAnimationFrame(animate);
+    const delta = clock.getDelta();
+    if (mixer) {
+        mixer.update(delta);
     }
+    if (deviceOrientationControls) {
+        deviceOrientationControls.update();
+        // Manually adjust camera orientation here if needed
+        // For example, rotate 180 degrees around the Y axis
+        // camera.rotation.y += Math.PI; 
+    }
+    composer.render();
+}
+
     animate();
 
     // Mouse and zoom controls
