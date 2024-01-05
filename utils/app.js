@@ -27,22 +27,48 @@ export function initializeThreeJS(mountPoint) {
     // Load the GLTF model
     let mixer; // Animation mixer
     const loader = new GLTFLoader();
-    loader.load('xalatath/scene.gltf', function (gltf) {
-        gltf.scene.scale.set(1, 1, 1);
+
+    // Load the 'planck_kingdom' model
+    loader.load('planck_kingdom/scene.gltf', function (gltf) {
+        // Set the position for 'planck_kingdom'
+        gltf.scene.position.set(0, 0, 0); // Adjust these values as needed
+        gltf.scene.scale.set(1, 1, 1); // Adjust scale if needed
+    
+        // Add to the scene
         scene.add(gltf.scene);
-        scene.position.x -= 0;
-        scene.position.y -= 35;
-        scene.position.z -= 15;
+    
+    // Create an animation mixer and play the first animation clip
+    mixer = new THREE.AnimationMixer(gltf.scene);
+    const action = mixer.clipAction(gltf.animations[0]);
+    action.play();
 
     }, undefined, function (error) {
-        console.error(error);
+        console.error('Error loading planck_kingdom model:', error);
     });
-
-   
+    
+    // Load the 'xalatath' model
+    loader.load('xalatath/scene.gltf', function (gltf) {
+        // Set the position for 'xalatath'
+        gltf.scene.position.set(0, -35, -15); // Adjust these values as needed
+        gltf.scene.scale.set(1, 1, 1); // Adjust scale if needed
+    
+        // Add to the scene
+        scene.add(gltf.scene);
+    
+        // Create an animation mixer and play the animation if exists
+        const mixer2 = new THREE.AnimationMixer(gltf.scene);
+        if (gltf.animations && gltf.animations.length) {
+            const action = mixer2.clipAction(gltf.animations[0]);
+            action.play();
+        }
+    }, undefined, function (error) {
+        console.error('Error loading xalatath model:', error);
+    });
+    
 
 
     // Create lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 4);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1);
    scene.add(ambientLight);
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
