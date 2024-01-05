@@ -13,39 +13,39 @@ export function initializeThreeJS(mountPoint) {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     
-    camera.position.z = 1;
-    camera.position.y = -2.;
-    camera.rotation.x = 0.4; // Rotate camera slightly upwards
+    //camera.position.z = 1;
+    //camera.position.y = -2.;
+    //camera.rotation.x = 0.4; // Rotate camera slightly upwards
 
 
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0xF5F5DC, 1); // Beige color as default
+    renderer.setClearColor(0x000000, 1); // Beige color as default
 
     mountPoint.appendChild(renderer.domElement);
 
     // Load the GLTF model
     let mixer; // Animation mixer
     const loader = new GLTFLoader();
-    loader.load('cloud_station/scene.gltf', function (gltf) {
+    loader.load('xalatath/scene.gltf', function (gltf) {
         gltf.scene.scale.set(1, 1, 1);
         scene.add(gltf.scene);
         scene.position.x -= 0;
-        scene.position.y -= 3;
-        if (gltf.animations && gltf.animations.length) {
-            mixer = new THREE.AnimationMixer(gltf.scene);
-            const action = mixer.clipAction(gltf.animations[0]);
-            action.play();
-        }
+        scene.position.y -= 35;
+        scene.position.z -= 15;
+
     }, undefined, function (error) {
         console.error(error);
     });
 
-    // Create lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1);
-    scene.add(ambientLight);
+   
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+
+    // Create lights
+    const ambientLight = new THREE.AmbientLight(0xffffff, 4);
+   scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
 

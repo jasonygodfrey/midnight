@@ -26,7 +26,7 @@ export default function Home() {
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="stylesheet" href="/style.css" />
-                <title>World of Warcraft - Midnights</title>
+                <title>World of Warcraft - Midnight</title>
                 <link rel="shortcut icon" href="/skrillexlogoico.ico" type="image/x-icon" />
                 <link href="https://fonts.googleapis.com/css2?family=Nimbus+Sans:wght@400;700&display=swap" rel="stylesheet" />
             </Head>
@@ -41,7 +41,7 @@ export default function Home() {
         {/* Your app content goes here */}
     </div>
     <div id="spotify-overlay">
-        <img src="spotify1.png" alt="Spotify" /> {/* Ensure the path is correct */}
+       {/* <img src="spotify1.png" alt="Spotify" />  Ensure the path is correct */}
     </div>
 </div>
             {/* If your app.js has React code, you can import it here.

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Xal'atath
+* source:	https://sketchfab.com/3d-models/xalatath-5ba845f2a71042868f4a512eb1c9d4bf
+* author:	Archrend (https://sketchfab.com/Archrend)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Xal'atath" (https://sketchfab.com/3d-models/xalatath-5ba845f2a71042868f4a512eb1c9d4bf) by Archrend (https://sketchfab.com/Archrend) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
