@@ -26,7 +26,7 @@ export default function Home() {
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="stylesheet" href="/style.css" />
-                <title>Spotify 3D Demo</title>
+                <title>World of Warcraft - Midnight</title>
                 <link rel="shortcut icon" href="/skrillexlogoico.ico" type="image/x-icon" />
                 <link href="https://fonts.googleapis.com/css2?family=Nimbus+Sans:wght@400;700&display=swap" rel="stylesheet" />
             </Head>
