@@ -4,6 +4,8 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DeviceOrientationControls } from 'three-stdlib';
+import { createGalaxy } from './Galaxy.js'; // Import the createGalaxy function
+
 
 export function initializeThreeJS(mountPoint) {
     const clock = new THREE.Clock();
@@ -19,21 +21,8 @@ export function initializeThreeJS(mountPoint) {
     renderer.setClearColor(0x000000, 1); // Black background
 
     mountPoint.appendChild(renderer.domElement);
-
-    // Galaxy Particle System
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCnt = 5000;
-    const posArray = new Float32Array(particlesCnt * 3);
-    for (let i = 0; i < particlesCnt * 3; i++) {
-        posArray[i] = (Math.random() - 0.5) * 5;
-    }
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-    const particlesMaterial = new THREE.PointsMaterial({
-        size: 0.005,
-        color: 0x8a2be2 // Purple color
-    });
-    const particleMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particleMesh);
+    // Use the createGalaxy function
+    const galaxy = createGalaxy(scene);
 
     // Load the GLTF models
     let mixer1, mixer2;
@@ -106,7 +95,7 @@ export function initializeThreeJS(mountPoint) {
         if (mixer1) mixer1.update(delta);
         if (mixer2) mixer2.update(delta);
         if (deviceOrientationControls) deviceOrientationControls.update();
-        particleMesh.rotation.y += 0.001; // Rotate the galaxy
+        galaxy.rotation.y += 0.001; // Rotate the galaxy
         composer.render();
     }
 
