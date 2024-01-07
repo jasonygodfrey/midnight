@@ -41,7 +41,7 @@ export default function Home() {
         {/* Your app content goes here */}
     </div>
     <div id="spotify-overlay">
-       {/* <img src="spotify1.png" alt="Spotify" />  Ensure the path is correct */}
+       <img src="wowmidnight.png" alt="Spotify" />  {/* Ensure the path is correct */}
     </div>
 </div>
             {/* If your app.js has React code, you can import it here.

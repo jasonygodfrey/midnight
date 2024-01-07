@@ -32,10 +32,14 @@ export function initializeThreeJS(mountPoint) {
     loader.load('planck_kingdom/scene.gltf', function (gltf) {
         gltf.scene.position.set(0, 0, 0);
         scene.add(gltf.scene);
+            // Correct way to set scale
+    gltf.scene.scale.set(2, 2, 2);
         mixer1 = new THREE.AnimationMixer(gltf.scene);
         if (gltf.animations.length) {
             const action = mixer1.clipAction(gltf.animations[0]);
             action.play();
+                    // Set animation speed to half
+        action.setEffectiveTimeScale(0.5);
         }
     }, undefined, function (error) {
         console.error('Error loading planck_kingdom model:', error);
